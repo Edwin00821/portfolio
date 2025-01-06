@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    company: "Alviplast",
+    title: "Full Stack Developer",
+    date: "Enero 2024 - Abril 2024",
+    description:
+      "Desarrollé un e-commerce escalable para Alviplast, mejorando la experiencia del cliente, optimizando procesos internos y asegurando un rendimiento eficiente y una arquitectura robusta.",
+    link: "https://alviplast.com.mx",
+  },
+  {
+    company: "Farogama",
+    title: "Full Stack Developer",
+    date: "Enero 2024 - Febrero 2024",
+    description:
+      "Implementé un chatbot para automatizar la atención al cliente, reduciendo tiempos de respuesta.",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

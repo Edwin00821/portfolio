@@ -4,6 +4,10 @@ import Layout from "@/layouts/Layout.astro";
 import Shell from "@/components/ui/Shell.astro";
 
 import Hero from "@/components/home/Hero.astro";
+import TitleSection from "@/components/home/TitleSection.astro";
+import Experience from "@/components/home/Experience.astro";
+
+import Briefcase from "@/components/icons/Briefcase.astro";
 ---
 
 <Layout
@@ -14,5 +18,15 @@ import Hero from "@/components/home/Hero.astro";
     <Shell class="py-16 md:py-36">
       <Hero />
     </Shell>
+
+    <div class="space-y-24">
+      <Shell id="experiencia">
+        <TitleSection>
+          <Briefcase class="size-8" />
+          Experiencia laboral
+        </TitleSection>
+        <Experience />
+      </Shell>
+    </div>
   </main>
 </Layout>
