@@ -1,0 +1,211 @@
+---
+import LinkButton from "@/components/LinkButton.astro";
+
+import LinkIcon from "@/components/icons/Link.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+import NextJSIcon from "@/components/icons/NextJS.astro";
+import TailwindIcon from "@/components/icons/Tailwind.astro";
+import TRPCIcon from "@/components/icons/Trpc.astro";
+import NeonIcon from "@/components/icons/Neon.astro";
+import DrizzleIcon from "@/components/icons/DrizzleORM.astro";
+import ReactQueryIcon from "@/components/icons/ReactQuery.astro";
+import ClerkIcon from "@/components/icons/Clerk.astro";
+import NodeIcon from "@/components/icons/NodeJS.astro";
+import JestIcon from "@/components/icons/Jest.astro";
+import ReactIcon from "@/components/icons/React.astro";
+import ViteIcon from "@/components/icons/Vite.astro";
+import VitestIcon from "@/components/icons/Vitest.astro";
+import PlaywrightIcon from "@/components/icons/Playwright.astro";
+import MarkdownIcon from "@/components/icons/Markdown.astro";
+
+interface Tag {
+  name: string;
+  class: string;
+  icon: any;
+}
+
+interface Project {
+  title: string;
+  description: string;
+  link?: string;
+  github?: string;
+  image: string;
+  tags: Tag[];
+}
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJSIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  TRPC: {
+    name: "tRPC",
+    class: "bg-blue-600 text-white",
+    icon: TRPCIcon,
+  },
+  NEON: {
+    name: "Neon",
+    class: "bg-green-500 text-white",
+    icon: NeonIcon,
+  },
+  DRIZZLE: {
+    name: "Drizzle ORM",
+    class: "bg-gray-800 text-white",
+    icon: DrizzleIcon,
+  },
+  REACT_QUERY: {
+    name: "React Query",
+    class: "bg-red-500 text-white",
+    icon: ReactQueryIcon,
+  },
+  CLERK: {
+    name: "Clerk",
+    class: "bg-gray-800 text-white",
+    icon: ClerkIcon,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-green-600 text-white",
+    icon: NodeIcon,
+  },
+  JEST: {
+    name: "Jest",
+    class: "bg-red-600 text-white",
+    icon: JestIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-blue-400 text-white",
+    icon: ReactIcon,
+  },
+  VITEST: {
+    name: "Vitest",
+    class: "bg-yellow-200 text-black",
+    icon: VitestIcon,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-blue-400 text-white",
+    icon: ViteIcon,
+  },
+  PLAYWRIGHT: {
+    name: "Playwright",
+    class: "bg-green-800 text-white",
+    icon: PlaywrightIcon,
+  },
+  MARKDOWN: {
+    name: "Markdown",
+    class: "bg-gray-800 text-white",
+    icon: MarkdownIcon,
+  },
+} satisfies Record<string, Tag>;
+
+const PROJECTS: Project[] = [
+  {
+    title: "Alviplast",
+    description:
+      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+    link: "https://alviplast.com.mx",
+    image: "/projects/alviplast.webp",
+    tags: [
+      TAGS.NEXT,
+      TAGS.REACT_QUERY,
+      TAGS.TAILWIND,
+      TAGS.TRPC,
+      TAGS.NEON,
+      TAGS.DRIZZLE,
+      TAGS.VITEST,
+      TAGS.PLAYWRIGHT,
+      TAGS.CLERK,
+    ],
+  },
+  {
+    title: "Dream Team",
+    description:
+      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+    link: "https://dream-team-orcin.vercel.app",
+    github: "https://github.com/Edwin00821/Dream-Team",
+    image: "/projects/dream-team.webp",
+    tags: [TAGS.NEXT, TAGS.MARKDOWN, TAGS.TAILWIND],
+  },
+  {
+    title: "Poke API",
+    description:
+      "Desarrollé una aplicación web con React y Vite para consultar el clima en tiempo real usando la API de pokemon. Este proyecto fortaleció mis habilidades en consumo de APIs REST y desarrollo con React.",
+    link: "https://poke-api-vite.vercel.app/",
+    github: "https://github.com/Edwin00821/poke-api-vite",
+    image: "/projects/poke-api.webp",
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.TAILWIND],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <a
+              href={link}
+              target="_blank"
+              role="link"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt={title}
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-wrap flex-row mb-2 gap-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {link && (
+                <LinkButton href={link}>
+                  <LinkIcon class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+              {github && (
+                <LinkButton href={github}>
+                  <GitHubIcon class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

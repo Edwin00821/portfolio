@@ -6,8 +6,10 @@ import Shell from "@/components/ui/Shell.astro";
 import Hero from "@/components/home/Hero.astro";
 import TitleSection from "@/components/home/TitleSection.astro";
 import Experience from "@/components/home/Experience.astro";
+import Projects from "@/components/home/Projects.astro";
 
 import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
 ---
 
 <Layout
@@ -20,6 +22,7 @@ import Briefcase from "@/components/icons/Briefcase.astro";
     </Shell>
 
     <div class="space-y-24">
+
       <Shell id="experiencia">
         <TitleSection>
           <Briefcase class="size-8" />
@@ -27,6 +30,22 @@ import Briefcase from "@/components/icons/Briefcase.astro";
         </TitleSection>
         <Experience />
       </Shell>
+
+      <Shell id="proyectos">
+        <TitleSection>
+          <CodeIcon class="size-8" />
+          Proyectos
+        </TitleSection>
+        <Projects />
+      </Shell>
+
+      <!-- <Shell id="sobre-mi">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe />
+    </Shell> -->
     </div>
   </main>
 </Layout>
