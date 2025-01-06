@@ -1,13 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Shell from "@/components/ui/Shell.astro";
+
+import Hero from "@/components/home/Hero.astro";
 ---
 
 <Layout
   title="Porfolio de Edwin - Desarrollador y Programador Web"
   description="Soy Edwin, desarrollador web especializado en crear aplicaciones modernas y funcionales."
 >
-  <main></main>
+  <main class="px-4">
+    <Shell class="py-16 md:py-36">
+      <Hero />
+    </Shell>
+  </main>
 </Layout>

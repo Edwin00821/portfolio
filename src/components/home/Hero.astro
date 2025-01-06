@@ -1,0 +1,52 @@
+---
+import Badge from "@/components/ui/Badge.astro";
+import SocialPill from "@/components/SocialPill.astro";
+
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+
+const personalImageAlt = "Miguel Ángel";
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <a
+      href="https://www.linkedin.com/in/edwin-astudillo"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hey, soy Edwin
+  </h1>
+
+  <p class="mt-6 text-base lg:text-xl text-gray-800">
+    <span class="text-sky-600/90">Desarrollador Full Stack</span> apasionado por
+    crear soluciones web innovadoras y escalables. Con un enfoque en la resolución
+    creativa de problemas y un
+    <span class="text-green-600/90">aprendizaje continuo</span>, me especializo
+    en transformar ideas en
+    <span class="text-red-600/90">aplicaciones funcionales y efectivas</span>.
+  </p>
+
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:astudillo.perez.edwin.uriel@gmail.com">
+      <MailIcon class="size-4" />
+      Contáctame
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/edwin-astudillo">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/Edwin00821">
+      <GitHubIcon class="size-4" />
+      GitHub
+    </SocialPill>
+  </nav>
+</div>
